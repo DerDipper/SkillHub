@@ -1,0 +1,20 @@
+@startuml
+
+Button_pressed  : Button = false
+Button_active : Button = true
+Button_released : Button = true
+Button_inactive : Button = false
+
+[*] --> Button_inactive : initial
+Button_inactive --> Button_pressed : Button_in = low
+Button_pressed --> Button_active : Button_in = low
+Button_pressed --> Button_inactive : Button_in = high
+Button_inactive --> Button_inactive : Button_in = high
+Button_active --> Button_active : Button_in = low
+Button_active --> Button_released : Button_in = high
+Button_released --> Button_active : Button_in = low
+Button_released --> Button_inactive : Button_in = high
+
+@enduml
+
+

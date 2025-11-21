@@ -1,0 +1,29 @@
+  \begin{tikzpicture}
+
+  \node [draw, minimum width=1cm, minimum height=2cm]  (input_logic) {$\bold{T}$};
+  \node [draw, minimum width=1cm, minimum height=2cm, right=1cm of input_logic]  (memory) {$\bold{S}$};
+  \node [draw, minimum width=1cm, minimum height=2cm, right=1cm of memory]  (output_logic) {$\bold{G}$};
+  \node [below=0.33cm of input_logic.west]  (input_logic_state_in) {};
+  \node [above=0.33cm of input_logic.west]  (input_logic_in_in) {};
+
+  \draw [-stealth] (input_logic.east) -- (memory.west) node[midway,above]{$s_{n+1}$};
+  \draw [-stealth] (memory.east) -- (output_logic.west) node[midway] (state) {} node[midway,above] {$s_{n}$};
+  \draw [stealth-] (input_logic_in_in.center) -- ++(-1,0) node[midway] (helper1) {} node[behind path, left]{$\sigma$};
+  \draw [-stealth] (output_logic.east) -- ++(1,0) node[behind path, right]{$\lambda$};
+
+  \node [below=1.5cm of helper1]  (helper2) {};
+  
+  \draw (state.center) |- (helper2.center);
+  \draw [-stealth] (helper2.center) |- (input_logic_state_in.center);
+
+  \node [below=0.75cm of memory.west]  (tri_a) {};
+  \node [below=0.70cm of memory.west]  (tri_b_) {};
+  \node [right=0.05cm of tri_b_.center]  (tri_b) {};
+  \node [right=0.00cm of tri_b.center] (clock) {{\small clk}};
+  \node [below=0.65cm of memory.west]  (tri_c) {};
+  \draw (tri_a.center) -- (tri_b.center)  -- (tri_c.center);
+
+  \node [below=0.05cm of memory.north east]  (s0_) {};
+  \node [left=-0.05cm of s0_.center]  (s0) {$s_0$};
+
+  \end{tikzpicture}
