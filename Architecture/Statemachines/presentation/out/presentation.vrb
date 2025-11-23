@@ -1,7 +1,4 @@
-\frametitle{Output Logic}
+\frametitle{Implementation of a generic Statemachine}
 \begin{center}
-      \begin{block}{Output Logic}
-        The Output logic can be implemented inside the statemachine, using hooks (function  pointers). For generic implementations this increases complexity.
-      \end{block}
-      Challenge: I prefer implementing the Output logic as a wrapper around the statemachine.
-\end{center}
+        \includegraphics[keepaspectratio,scale=0.45]{out/statemachineImplementation.png}
+      \end{center}

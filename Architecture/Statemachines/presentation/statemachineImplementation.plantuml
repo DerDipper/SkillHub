@@ -1,0 +1,42 @@
+@startuml
+class StateMachine {
+ - state
+ - stateTable
+ - transitionTable
+ + initialize()
+ + reset()
+ + signal(event)
+ + dispatch()
+ + getState() : state
+}
+
+struct StateTableEntry {
+    - id : State
+    - *entry* : Handler
+    - *exit* : Handler
+    - *do* : Handler
+}
+
+struct TransitionTableEntry {
+    - from : State
+    - to : State
+    - event : Event
+    - *transition* : Handler
+}
+
+struct TransitionTable {
+    - tableSize : int
+    - tableEntry : TransitionTableEntry
+}
+
+struct StateTable {
+    - tableSize : int
+    - tableEntry : StateTableEntry
+}
+
+StateMachine <-- TransitionTable
+TransitionTable <-- TransitionTableEntry
+StateMachine <-- StateTable
+StateTable <-- StateTableEntry
+
+@enduml

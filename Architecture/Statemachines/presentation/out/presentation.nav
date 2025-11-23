@@ -40,7 +40,7 @@
 \headcommand {\beamer@framepages {17}{17}}
 \headcommand {\beamer@sectionpages {4}{17}}
 \headcommand {\beamer@subsectionpages {4}{17}}
-\headcommand {\sectionentry {3}{Implementation}{18}{Implementation}{0}}
+\headcommand {\sectionentry {3}{Software Specification}{18}{Software Specification}{0}}
 \headcommand {\slideentry {3}{0}{1}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
 \headcommand {\slideentry {3}{0}{2}{19/19}{}{0}}
@@ -59,8 +59,19 @@
 \headcommand {\beamer@framepages {25}{25}}
 \headcommand {\slideentry {3}{0}{9}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\beamer@partpages {1}{26}}
-\headcommand {\beamer@subsectionpages {18}{26}}
-\headcommand {\beamer@sectionpages {18}{26}}
-\headcommand {\beamer@documentpages {26}}
-\headcommand {\gdef \inserttotalframenumber {22}}
+\headcommand {\slideentry {3}{0}{10}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@sectionpages {18}{27}}
+\headcommand {\beamer@subsectionpages {18}{27}}
+\headcommand {\sectionentry {4}{Software Implemtation}{28}{Software Implemtation}{0}}
+\headcommand {\slideentry {4}{0}{1}{28/28}{}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {4}{0}{2}{29/29}{}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {4}{0}{3}{30/30}{}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@partpages {1}{30}}
+\headcommand {\beamer@subsectionpages {28}{30}}
+\headcommand {\beamer@sectionpages {28}{30}}
+\headcommand {\beamer@documentpages {30}}
+\headcommand {\gdef \inserttotalframenumber {25}}

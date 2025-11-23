@@ -1,3 +1,4 @@
 \beamer@sectionintoc {1}{Example}{2}{0}{1}
 \beamer@sectionintoc {2}{Finite Statemachine}{4}{0}{2}
-\beamer@sectionintoc {3}{Implementation}{18}{0}{3}
+\beamer@sectionintoc {3}{Software Specification}{18}{0}{3}
+\beamer@sectionintoc {4}{Software Implemtation}{28}{0}{4}

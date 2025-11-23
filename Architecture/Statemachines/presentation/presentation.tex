@@ -254,13 +254,13 @@ When not to use a statemachine?
 
 \end{frame}
 
-\section[Implementation]{Implementation}
+\section[Software Specification]{Software Specification}
 
 \begin{frame}[fragile]{Interface of Statemachine Component}
 \begin{center}
 
       \begin{center}
-        \includegraphics[keepaspectratio,scale=0.35]{out/statemachineClass.png}
+        \includegraphics[keepaspectratio,scale=0.5]{out/statemachineClass.png}
       \end{center}
     \begin{table}[h]
     \centering
@@ -277,7 +277,7 @@ When not to use a statemachine?
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{Parameters of Statemachine Component}
+\begin{frame}[fragile]{Features of Statemachine Component}
 \begin{center}
     \begin{itemize}
     \item synchronous asynchronous dispatch (clock)
@@ -285,8 +285,16 @@ When not to use a statemachine?
     \item no reaction or transition or entry-function/exit-function
     \item use do-function
     \item use use output logic
+    \item treat non-transition events 
     \end{itemize}
 \end{center}
+
+The more features you want the more complex the solution will be.
+
+\begin{alertblock}{Senior Experience}
+    Complexity increases Risk.
+\end{alertblock}
+
 \end{frame}
 
 \begin{frame}[fragile]{Synchronous/Asynchronous Dispatch}
@@ -380,5 +388,33 @@ When not to use a statemachine?
       Challenge: I prefer implementing the Output logic as a wrapper around the statemachine. 
 \end{center}
 \end{frame}
+
+\begin{frame}[fragile]{Non Transition Events}
+\begin{center}
+      \begin{block}{Non-Transition Events}
+        Not every Event must lead to transition in any state. There must be a decision whether such events need to be treated (Error-Handling).
+      \end{block}
+      This decision is strictly use-case dependent. Personally i try to avoid error-handling in Non-Transition Events. 
+      Alternatively, if all defined events have defined transitions in every state, this issue can be avoided by design completely.
+\end{center}
+\end{frame}
+
+\section[Software Implemtation]{Software Implemtation}
+
+\begin{frame}[fragile]{Implementation of Statemachine}
+\begin{itemize}
+   \item At the core a statemachine is basically a nested switch statement, thats a good way for dealing with small non-generic implementations.
+   \item For handling more complex or generic implementations a table based approach may be better.
+\end{itemize}
+\begin{alertblock}{Senior Experience}
+    (Nested) Switch statements are difficult to maintain.
+\end{alertblock}
+\end{frame}
+\begin{frame}[fragile]{Implementation of a generic Statemachine}
+      \begin{center}
+        \includegraphics[keepaspectratio,scale=0.45]{out/statemachineImplementation.png}
+      \end{center}
+\end{frame}
+
 
 \end{document}
