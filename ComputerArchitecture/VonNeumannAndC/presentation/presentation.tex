@@ -12,6 +12,7 @@
 
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\usetikzlibrary{positioning}
 
 \title{Vom Neumann and C}
 \subtitle{A look beneath}
@@ -21,7 +22,7 @@
 % \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
 
 \begin{document}
-
+\metroset{block=fill}
 \maketitle
 
 %\begin{frame}{Table of contents}
@@ -32,23 +33,17 @@
 \section[Intro]{Code Execution}
 
 \begin{frame}[fragile]{Von Neumann Architektur}
+  \begin{center}
+  \input{von_neumann_architecture.tex}
+  \end{center}
 \end{frame}
 
 
 \section[Intro]{Understanding the System}
 
-\begin{frame}[fragile]{Understanding the System}
+\begin{frame}[fragile]{Von Neumann Architecture}
 \begin{center}
 
-      \metroset{block=fill}
-
-      \begin{block}{Experience}
-        To properly engineer something you need to understand your components and tools to a certain level.
-      \end{block}
-
-      \begin{exampleblock}{Remark}
-        Finding that level Depends on the problem.
-      \end{exampleblock}
 
 \end{center}
 \end{frame}
