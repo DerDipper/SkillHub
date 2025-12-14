@@ -38,6 +38,42 @@
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Example implementation}
+  \begin{center}
+  \input{von_neumann_architecture_implementation.tex}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Bus}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.33\textwidth}
+    Master Interface
+    \begin{itemize}
+      \item Read Request
+      \item Write Request
+      \item Address Based
+      \item Word Size
+    \end{itemize}
+    \column{0.33\textwidth}
+    Slave Interface
+    \begin{itemize}
+      \item Read Response 
+      \item Write Response
+      \item Mapped on Address Range
+      \item Word Size
+    \end{itemize}
+    \column{0.33\textwidth}
+    Bus as Multiplexer
+    \begin{itemize}
+      \item Maps Requests for Slave Address Range to Slave
+      \item Multiple Channels possible (Multi Master)
+    \end{itemize}
+  \end{columns}
+\begin{center}
+  \vspace{2cm}
+  \href{https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.st.com/resource/en/reference_manual/rm0454-stm32g0x0-advanced-armbased-32bit-mcus-stmicroelectronics.pdf&ved=2ahUKEwi60-Sj-JyRAxUc_7sIHQfdIJwQFnoECAwQAQ&usg=AOvVaw3lSwbTb5IyN9LnayPYfHpf}{STM32g070 Reference Manual}
+\end{center}
+\end{frame}
 
 \section[Intro]{Understanding the System}
 

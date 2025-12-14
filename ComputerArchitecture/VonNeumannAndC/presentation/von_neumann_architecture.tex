@@ -2,7 +2,7 @@
 
   \node [draw, minimum width=2cm, minimum height=2cm]  (cpu) {CPU};
   \node [draw, minimum width=10cm, minimum height=1cm, below=1cm of cpu]  (bus) {Bus};
-  \node [draw, minimum width=0.1cm, minimum height=2cm, below=0.5cm of bus]  (memory) {Memory};
+  \node [draw, minimum width=0.1cm, minimum height=2cm, below=0.5cm of bus.south]  (memory) {Memory};
 
   \node [left=4.0cm of bus.south]  (bus_iodevice2) {};
   \node [left=2.0cm of bus.south]  (bus_iodevice1) {};
@@ -19,13 +19,12 @@
   \node [right=0.5cm of bus.north]  (bus_i) {};
   \node [left=0.5cm of bus.north]  (bus_d) {};
 
-  \draw [<->] (cpu_i.center) -- (bus_i.center) node[midway,right]{Instructions};
-  \draw [<->] (cpu_d.center) -- (bus_d.center) node[midway,left]{Data};
+  \draw [<->] (cpu.south) -- (bus.north) node[midway,right]{Instructions + Data};
   \draw [<->] (bus.south) -- (memory.north);
 
-  \draw [<->] (bus_iodevice1) -- (iodevice1.north);
-  \draw [<->] (bus_iodevice2) -- (iodevice2.north);
-  \draw [<->] (bus_iodevice3) -- (iodevice3.north);
-  \draw [<->] (bus_iodevice4) -- (iodevice4.north);
+  \draw [<->] (bus_iodevice1.center) -- (iodevice1.north);
+  \draw [<->] (bus_iodevice2.center) -- (iodevice2.north);
+  \draw [<->] (bus_iodevice3.center) -- (iodevice3.north);
+  \draw [<->] (bus_iodevice4.center) -- (iodevice4.north);
 
   \end{tikzpicture}
