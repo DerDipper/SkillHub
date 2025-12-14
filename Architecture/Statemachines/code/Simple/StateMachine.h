@@ -25,7 +25,15 @@ typedef struct StateMachine_Config
  * @param pConfig pointer to configuration of statemachine
  * @return int32_t result of operation
  */
-extern int32_t StateMachine_init(StateMachine * const pInstance, StateMachine_Config const * const pConfig);
+extern int32_t Statemachine_initialize(StateMachine * const pInstance, StateMachine_Config const * const pConfig);
+
+/**
+ * @brief Resets a given Statemachine to initial state
+ * 
+ * @param pInstance pointer to Statemachine Instance that is being initialized
+ * @return int32_t result of operation
+ */
+extern int32_t StateMachine_reset(StateMachine * const pInstance);
 
 /**
  * @brief Executes Transition Evaluation
@@ -34,7 +42,7 @@ extern int32_t StateMachine_init(StateMachine * const pInstance, StateMachine_Co
  * @param event Event to be evaluated
  * @return int32_t result of operation
  */
-extern int32_t StateMachine_evaluate(StateMachine * const pInstance, Event const event);
+extern int32_t Statemachine_signal(StateMachine * const pInstance, Event const event);
 
 /**
  * @brief Returns the State of the Statemachine
