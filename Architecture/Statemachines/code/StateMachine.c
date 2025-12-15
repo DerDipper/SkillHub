@@ -15,7 +15,7 @@ extern int32_t StateMachine_reset(StateMachine * const pInstance)
 
 extern int32_t Statemachine_signal(StateMachine * const pInstance, Event const event)
 {
-    int index = 0;
+    int32_t index = 0;
     State toGoTo = pInstance->state;
 
     for(index = 0; index < pInstance->config->transitionCount; index++)
