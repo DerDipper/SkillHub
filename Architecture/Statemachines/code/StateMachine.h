@@ -8,15 +8,25 @@
 typedef int32_t Event;
 typedef int32_t State;
 
-typedef struct StateMachine
+typedef struct Transition
 {
-
-}StateMachine;
+    State from;
+    State to;
+    Event trigger;
+}Transition;
 
 typedef struct StateMachine_Config
 {
-
+    State initialState;
+    size_t transitionCount;
+    Transition const * transitions;
 }StateMachine_Config;
+
+typedef struct StateMachine
+{
+    State state;
+    StateMachine_Config const * config;
+}StateMachine;
 
 /**
  * @brief Initializes the Statemachine

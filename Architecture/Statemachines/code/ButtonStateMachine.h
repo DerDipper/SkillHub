@@ -18,6 +18,8 @@ typedef enum Button_State
     BUTTON_STATE_RELEASED,  /**< Button is in released state */
 }Button_State;
 
+extern const StateMachine_Config buttonStateMachine_Config;
+
 /**
  * @brief Get the Enum Name from a enum Value
  * 

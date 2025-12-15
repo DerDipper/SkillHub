@@ -1,6 +1,21 @@
 #include "ButtonStateMachine.h"
 #include "EnumTools.h"
 
+static const Transition buttonStateMachineTransitions[] = {
+    {.from = BUTTON_STATE_INACTIVE, .to = BUTTON_STATE_PRESSED, .trigger = BUTTON_EVENT_LOW},
+    {.from = BUTTON_STATE_PRESSED, .to = BUTTON_STATE_INACTIVE, .trigger = BUTTON_EVENT_HIGH},
+    {.from = BUTTON_STATE_PRESSED, .to = BUTTON_STATE_ACTIVE, .trigger = BUTTON_EVENT_LOW},
+    {.from = BUTTON_STATE_ACTIVE, .to = BUTTON_STATE_RELEASED, .trigger = BUTTON_EVENT_HIGH},
+    {.from = BUTTON_STATE_RELEASED, .to = BUTTON_STATE_ACTIVE, .trigger = BUTTON_EVENT_LOW},
+    {.from = BUTTON_STATE_RELEASED, .to = BUTTON_STATE_INACTIVE, .trigger = BUTTON_EVENT_HIGH},
+};
+
+const StateMachine_Config buttonStateMachine_Config = 
+{
+    .initialState = BUTTON_STATE_INACTIVE,
+    .transitions = buttonStateMachineTransitions,
+    .transitionCount = sizeof(buttonStateMachineTransitions)/sizeof(buttonStateMachineTransitions[0]),
+};
 
 extern const char* Button_Event_getString(Button_Event const event)
 {

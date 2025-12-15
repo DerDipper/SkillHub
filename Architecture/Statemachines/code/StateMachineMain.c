@@ -3,7 +3,6 @@
 #include "ButtonStateMachine.h"
 
 StateMachine machine;
-StateMachine_Config config;
 
 void TestEvaluateEvent(Button_Event event)
 {
@@ -16,7 +15,7 @@ void TestEvaluateEvent(Button_Event event)
 int main(void)
 {
     printf("----------------------------------------------------------------\n");
-    Statemachine_initialize(&machine, &config);
+    Statemachine_initialize(&machine, &buttonStateMachine_Config);
 
     TestEvaluateEvent(BUTTON_EVENT_LOW);
     TestEvaluateEvent(BUTTON_EVENT_LOW);
