@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+
+\node [draw, minimum width=0.1cm, minimum height=2cm]  (f_d) {Fetch \& Decode};
+\node [draw, minimum width=0.1cm, minimum height=1cm, left=0.75cm of f_d.north west]  (registers) {Registers};
+\node [draw, minimum width=0.1cm, minimum height=2cm, left=3cm of f_d]  (alu) {ALU};
+\node [draw, minimum width=0.1cm, minimum height=2cm, below=1cm of f_d]  (i_bus) {I-Bus};
+\node [draw, minimum width=0.1cm, minimum height=2cm, below=1cm of alu]  (d_bus) {D-Bus};
+
+\draw [<->] (f_d.south) -- (i_bus.north);
+\draw [<->] (alu.south) -- (d_bus.north);
+\draw [<->] (f_d.west) -- (alu.east);
+\draw [<->] (alu.east) -- (f_d.west);
+
+\draw [<->] (alu.north east) -- (registers.west);
+\draw [<->] (registers.east) -- (f_d.north west);
+
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+  \begin{tikzpicture}
+
+  \node [draw, minimum width=2cm, minimum height=2cm]  (cpu) {Cortex M0+};
+  \node [draw, minimum width=10cm, minimum height=1cm, below=1cm of cpu]  (bus) {Bus};
+
+  \node [below=0.0cm of bus.south]  (bus_memory) {};
+  \node [left=4.0cm of bus.south]  (bus_iodevice2) {};
+  \node [left=2.0cm of bus.south]  (bus_iodevice1) {};
+  \node [right=2.0cm of bus.south]  (bus_iodevice3) {};
+  \node [right=4.0cm of bus.south]  (bus_iodevice4) {};
+
+  \node [draw, minimum width=0.1cm, minimum height=2cm, below=0.5cm of bus_memory.center]  (memory) {SRAM};
+  \node [draw, minimum width=0.1cm, minimum height=1cm, below=0.5cm of bus_iodevice1]  (iodevice1) {UART0};
+  \node [draw, minimum width=0.1cm, minimum height=1cm, below=0.5cm of bus_iodevice2]  (iodevice2) {UART1};
+  \node [draw, minimum width=0.1cm, minimum height=2cm, below=0.5cm of bus_iodevice3]  (iodevice3) {Flash};
+  \node [draw, minimum width=0.1cm, minimum height=1cm, below=0.5cm of bus_iodevice4]  (iodevice4) {Timer};
+
+  \node [right=0.5cm of cpu.south]  (cpu_i) {};
+  \node [left=0.5cm of cpu.south]  (cpu_d) {};
+  \node [right=0.5cm of bus.north]  (bus_i) {};
+  \node [left=0.5cm of bus.north]  (bus_d) {};
+
+  \draw [<->] (cpu.south) -- (bus.north) node[midway,right]{};
+  \draw [<->] (bus.south) -- (memory.north);
+
+  \draw [<->] (bus_iodevice1.center) -- (iodevice1.north);
+  \draw [<->] (bus_iodevice2.center) -- (iodevice2.north);
+  \draw [<-] (bus_iodevice3.center) -- (iodevice3.north);
+  \draw [<->] (bus_iodevice4.center) -- (iodevice4.north);
+
+  \end{tikzpicture}

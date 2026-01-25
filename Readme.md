@@ -4,5 +4,5 @@
 | ---- | ------- |
 | 24.11.2025 | Architecture/Statemachines |
 | 15.12.2025 | Architecture/Statemachines |
-|            | ComputerArchitecture/VonNeumannAndC |
+| 26.02.2026 | ComputerArchitecture/VonNeumannAndC |
 
